@@ -1,0 +1,33 @@
+# OS generated files #
+######################
+node_modules
+.tmp
+config.codekit
+.codekit-cache
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+#Ignore Eclipse files
+.settings
+.project
+.buildpath
+
+# Ignore Apache files
+.htaccess
+.htpasswd
+
+
+# CSS
+############
+.sass-cache
+
+# UPLOADS
+############
+uploads/
+
+# PSDs
+############
+gui/

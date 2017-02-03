@@ -1,0 +1,30 @@
+.drop {
+  padding: 20px; }
+
+#drop-zone {
+  border: 4px solid #ccc;
+  width: 300px;
+  min-height: 300px;
+  margin: 20px auto; }
+  #drop-zone.hover {
+    border: 4px solid #0c0; }
+  #drop-zone img {
+    display: block;
+    margin: 10px auto; }
+  #drop-zone p {
+    margin: 10px;
+    font-size: 14px; }
+
+progress {
+  width: 100%; }
+
+.fail {
+  background: #c00;
+  padding: 2px;
+  color: #fff; }
+
+.hidden {
+  display: none !important; }
+
+.info {
+  padding-top: 40px; }

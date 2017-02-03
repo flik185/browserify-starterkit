@@ -1,0 +1,24 @@
+// fonts
+$font-serif: "Rasa", serif;
+$font-sans:'Lato', sans-serif;
+
+$regular-serif: 400;
+$bold-serif: 700;
+
+$regular-sans: 400;
+$bold-sans: 900;
+$font-base: 10px;
+
+
+// timing functions
+$time-slow: 2s;
+$time-normal: 1s;
+$time-mid: 0.6s;
+$time-fast: 0.3s;
+
+$ease:cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$ease-timing: cubic-bezier(0.19, 1, 0.22, 1);
+$bounced-timing: cubic-bezier(.64,.57,.47,1.29);
+$back-timing: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+$ease-out-quint:cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$ease-in-quint:cubic-bezier(0.755, 0.050, 0.855, 0.060);

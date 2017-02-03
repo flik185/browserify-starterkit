@@ -1,0 +1,90 @@
+// Styled SELECT
+/*
+<div class="styled-select">
+  <select>
+    <option>option 1</option>
+    <option>option 2</option>
+  </select>
+</div>
+*/
+.styled-select {
+   width: 208px;                        /* modify */
+   height: 32px;                        /* modify */
+   line-height: 32px;                   /* modify */
+   overflow: hidden;
+   background: #ccc;                    /* modify */
+  select {
+    overflow:hidden;
+    width:1000px;                       /* this percentage effectively extends the drop down button out of view */;
+    background-color:transparent        /* this hides the select's background making any styling visible from the div */;
+    background-image:none;
+    text-transform: uppercase;
+    color: #000;                        /* modify */
+    padding: 0 5px;                     /* modify */
+    @include font-size(1.3);            /* modify */
+    line-height: 1em;                   /* modify */
+    border: 0;
+    height: 32px;                       /* modify */
+    -webkit-appearance: none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    text-indent: 0.01px;
+    text-overflow: '';
+    outline: none;
+
+    option {
+      height: 32px;                     /* modify */
+      @include x-rem(line-height, 4);   /* modify */
+      color: #000;                      /* modify */
+    }
+  }
+  select::-ms-expand {
+    display: none;
+  }
+}
+
+
+
+
+// Styled CHECKBOX
+/*
+<p class="styled-checkbox">
+  <input type="checkbox" checked="" class="ckb" name="">
+  <label for="custom">
+    <span>Label</span>
+  </label>
+</p>
+*/
+.styled-checkbox {
+  position: relative;
+  input[type=checkbox] {
+    display: none;
+  }
+  label {
+    //@include font-size(1.6);                              /* modify */
+    span {padding-left: 25px}                               /* modify */
+  }
+  label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+  	//margin-right: 10px;
+  	//position: absolute;
+  	//left: 0px;
+  	//bottom: 8px;
+  	background-color: transparent;
+  	border:1px solid #000;
+  }
+
+  input[type=checkbox]:checked + label:before {
+	  content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);           /* modify */
+    //font-size: 15px;                                    /* modify */
+    //color: #000;                                        /* modify */
+    //text-align: center;
+    //line-height: 15px;                                  /* modify */
+  }
+
+}

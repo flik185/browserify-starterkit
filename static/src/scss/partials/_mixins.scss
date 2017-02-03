@@ -1,0 +1,101 @@
+// Blur i.e = @include blur(2)
+@mixin blur($b:5) {
+  -webkit-filter: blur(#{$b}px);
+  -moz-filter: blur(#{$b}px);
+  -o-filter: blur(#{$b}px);
+  -ms-filter: blur(#{$b}px);
+  filter: url("data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"blur\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"#{$b}\" /></filter></svg>#blur");
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+// CLEARFIX
+@mixin clearfix {
+  zoom: 1;
+  &:before { content: ''; display: block; }
+  &:after { content: ''; display: table; clear: both; }
+}
+
+// Opacity
+@mixin opacity($value){
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+// Font sizing
+@mixin font-size($sizeValue) {
+  $remValue: $sizeValue;
+  $pxValue: ($sizeValue * 10);
+  font-size: $pxValue + px;
+  line-height: ($sizeValue * 1.5 * 10) + px;
+  font-size: $remValue + rem;
+  line-height: $sizeValue * 1.5 + rem;
+}
+
+@mixin x-rem ($property, $value) {
+  #{$property}: $value * $font-base;
+  #{$property}: #{$value}rem;
+}
+
+
+
+// INIT HW Acceleration
+@mixin hw-accelerate() {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+// ANTI PAGE FLICKER
+@mixin anti-flicker {
+  -webkit-perspective: 1000;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  -moz-backface-visibility:hidden;
+  -ms-backface-visibility:hidden;
+}
+
+// MEDIA QUERIES
+
+@mixin bp-min($point) {
+  @media all and (min-width: $point) { @content; }
+}
+
+@mixin bp-max($point) {
+  @media (max-width: $point) { @content; }
+}
+
+@mixin bp-max-h($point) {
+  @media (max-height: $point) { @content; }
+}
+
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@mixin btn() {
+  border: 1px solid $color-bt-border;
+  //color: $color-text-bt;
+  color: $color-eliseo;
+  padding: 10px 25px;
+  @include font-size(1.6);
+  @include x-rem(line-height, 2.0);
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: $bold-sans;
+  display: inline-block;
+  max-width: 280px;
+}

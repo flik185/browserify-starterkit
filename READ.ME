@@ -1,0 +1,48 @@
+#######################
+# GET STUFF ROLLING   #
+#######################
+npm install
+
+
+#######################
+# BROWSERIFY from NPM #
+#######################
+
+# simple bundle
+browserify main.js -o bundle.js
+
+# SOURCE MAPS (--debug)
+browserify main.js --debug | exorcist bundle.js.map > bundle.js
+
+or
+
+browserify main.js -o bundle.js --debug
+
+
+# MINIFY
+browserify main.js | uglifyjs -c > bundle.min.js
+
+
+
+
+########
+# GULP #
+########
+
+- gulpfile.js = contains 2 main gulp tasks (static-prod and static-dev)
+- All tasks divided in single files under ./gulp/tasks/ : if you need new tasks, just drop .js file in this folder
+
+
+#######################
+# DIRECTORY STRUCTURE #
+#######################
+
+- static = main dir containing all static-related files
+  - src = dir containing scss, js, images and html
+    - htmlParts = dir containing html includes that compose page thanks to fileinclude package
+    - templates = dir containing full html templates, each made of single htmlParts files
+    - scripts = dir for javascript files
+      - libs = dir for jquery, zepto, other libs/plugins
+      - alien8 = dir for stand-alone custom javascripts
+      - main.js = main js file that requires all sub js files found in alien8, libs, and others
+    - scss = dir for scss files, divided in partials
